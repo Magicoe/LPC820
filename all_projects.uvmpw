@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ProjectWorkspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_mpw.xsd">
+
+  <SchemaVersion>1.0</SchemaVersion>
+
+  <Header>### uVision Project, (C) Keil Software</Header>
+
+  <WorkspaceName>WorkSpace</WorkspaceName>
+
+  <project>
+    <PathAndName>.\app_example\all_in_one\app_all_in_one.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\app_example\blinky\app_blinky.uvprojx</PathAndName>
+    <NodeIsActive>1</NodeIsActive>
+  </project>
+
+  <project>
+    <PathAndName>.\app_example\freertos_blinky\app_freertos_blinky.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\app_example\hello_world\app_hello_world.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\adc\adc_example\project_adc_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\acmp\acmp_example\project_acmp_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\bod\bod_example\project_bod_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\crc\crc_example\project_crc_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\dma\dma_mem\project_dma_mem.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\dma\dma_uart\project_dma_uart.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\flash\flash_iap\project_flash_iap.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\flash\flash_signature\project_flash_signature.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\gpio\gpio_example\project_gpio_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\i2c\i2cm_interrupt\project_i2cm_interrupt.uvprojx</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\i2c\i2cm_polling\project_i2cm_polling.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\i2c\i2cs_interrupt\project_i2cs_interrupt.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\mrt\mrt_example\project_mrt_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\pinint\pinint_example\project_pinint_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\pmu\pmu_example\project_pmu_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\rom\rom_i2c_interrupt\project_rom_i2c_interrupt.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\rom\rom_i2c_polling\project_rom_i2c_polling.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\rom\rom_i2c_slave_interrupt\project_rom_i2c_slave_interrupt.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\rom\rom_uart_int\project_rom_uart_int.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\rom\rom_uart_polling\project_rom_uart_polling.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\sctimer\sct_basic\project_sct_basic.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\sctimer\sct_pwm\project_sct_pwm.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\sctimer\sct_blinky\project_sct_blinky.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\sctimer\sct_capture\project_sct_capture.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\sctimer\sct_tlight\project_sct_tlight.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\spi\spi_basic\project_spi_basic.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\spi\spi_sm_int\project_spi_sm_int.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\sys\sys_clkout\project_sys_clkout.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\sys\sys_glitch_filter\project_sys_glitch_filter.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\sys\sys_pll_tab\project_sys_pll_tab.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\sys\sys_systick\project_sys_systick.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\uart\uart_basic\project_uart_basic.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\uart\uart_rb\project_uart_rb.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\wkt\wkt_example\project_wkt_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\peri_example\wwdt\wwdt_example\project_wwdt_example.uvprojx</PathAndName>
+  </project>
+
+</ProjectWorkspace>

@@ -1,0 +1,29 @@
+重新制作目录树，并相应修改工程文件
+一个包只支持一种开发工具
+每个外设模块有自己的文件夹，里面存储驱动与头文件
+chip.h现在可以只包含common目录下的头文件。各外设模块示例可以包含"peri_driver"目录下的peri_driver.h，它包含了所有的外设驱动各自目录下的头文件。
+把i2c和spi模块的多个 .c, .h 合并成了一个
+把iap从chip_common转到peri_driver下的一个目录
+把iocon_8xx.c和swm_8xx.c合并成了ioswm_8xx.c
+把irc_8xx.c并入clock_8xx.c，新名称是clock_8xx.c
+FMC只有fmc_8xx.h，没有.c。它里面涉及了flash等待周期的设置，使其成为所有示例必需，因此把它移到了common下。
+取消了sys_config.h (里面只有2个宏定义)，直接把内容放到了包含它的"cmsis.h"
+修改 Chip_SystemInit(), 它根据宏"MAIN_XTAL_HZ"是否定义来决定用晶振还是IRC做时钟源
+clock_8xx.c中有一个API "Chip_IRC_SetFreq_ROM" 依赖ROM driver。但是目前是把ROM driver当作peri_driver，common的东西不应该依赖这个。因此加上了条件编译，仅当用户文件包含了rom api时才开放这个API
+外部晶振/时钟的频率设定，由之前的hardcode改为在board.h中用宏定义来配置，以允许用户使用不同频率的晶振/外部时钟
+板子的LED数量以及LED引脚设置转移到了board.h中。
+有一个stopwatch.h，它既不是common，也不是peri_driver，被两个示例的主文件include。现在的做法：把这个文件一式两份放在了相应示例的根目录下（与示例主文件在同一目录）
+问题：以下2个模块是否可以合并？第一个模块显然比第2个模块常用——只要初始化外设，在流程上理应先打开此外设的电源。第2个模块仅当需要低功耗时才会用
+	(common) syscon_8xx.c中的Chip_SYSCTL_xxx函数，用于控制在不同功耗模式下模氛外设的供电。
+	(peri_driver) pmu_8xx.c中用于控制芯片在不同功耗模式之间切换
+
+注意： 
+	为图快，外设示例工程文件暂名为project.uvprojx，主文件暂名为main.c；应用示例工程暂名为”app.uvprojx”。请各位在完成自己的例子时把"project.uvprojx"改为"示例名.uvproj"，main.c改为"示例名_main.c"，并添加到工程中。
+	若遇到编译错误，一般是示例需要的外设驱动文件没有添加，请在KEIL工程的"Driver"目录下添加".\peri_driver"下在工程中缺失的文件
+
+其实大家也看出来了，这样的问题就是不能使用一个单一的工程模板适配所有的示例（那样就要添加所有可能需要的文件）。
+
+
+2016-02-24 新增
+------------------------------
+在board.h中新增配置宏"USE_IRC_AS_ROOT_CLOCK"，如果定义，则IRC被用于根时钟源，否则用外部振荡器。在sysinit_8xx.c中的SystemInit()函数会使用这个宏

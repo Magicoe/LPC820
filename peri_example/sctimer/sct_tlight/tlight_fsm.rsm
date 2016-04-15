@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StateMachine>
+<Global key="SCT c file" value="sct_fsm.c"/>
+<Global key="Header in sct_user.h" value="chip.h"/>
+<Global key="Target" value="LPC824"/>
+<Global key="Init function prefix" value="sct_fsm"/>
+<Global key="User h file" value="sct_user.h"/>
+<Global key="SCT h file" value="sct_fsm.h"/>
+<Global key="Main output file" value="sct_fsm.smd"/>
+<Global key="Name" value="sct_fsm"/>
+<Input IMemento.internal.id="SmInput" Name="Input pin 0" Permissions="6" Source="CTIN_0" Type="0"/>
+<Input IMemento.internal.id="SmInput" Name="Input pin 1" Permissions="6" Source="CTIN_1" Type="0"/>
+<Input IMemento.internal.id="SmInput" Name="Input pin 2" Permissions="6" Source="CTIN_2" Type="0"/>
+<Input IMemento.internal.id="SmInput" Name="Input pin 3" Permissions="6" Source="CTIN_3" Type="0"/>
+<Input IMemento.internal.id="SmInput" Name="match0" Permissions="0" Source="delay" Type="9"/>
+<Input IMemento.internal.id="SmInput" Name="delay" Permissions="0" Source="5000000" Type="6"/>
+<Input IMemento.internal.id="SmInput" Name="yel_delay" Permissions="0" Source="2000000" Type="6"/>
+<Input IMemento.internal.id="SmInput" Name="yel_flash" Permissions="0" Source="2000000" Type="6"/>
+<Input IMemento.internal.id="SmInput" Name="flash" Permissions="0" Source="1000000" Type="6"/>
+<Input IMemento.internal.id="SmInput" Name="yel_delay_mat" Permissions="0" Source="yel_delay" Type="9"/>
+<Input IMemento.internal.id="SmInput" Name="yel_flash_mat" Permissions="0" Source="yel_flash" Type="9"/>
+<Input IMemento.internal.id="SmInput" Name="flash_mat0" Permissions="0" Source="flash" Type="9"/>
+<Input IMemento.internal.id="SmInput" Name="flash_mat1" Permissions="0" Source="flash1" Type="9"/>
+<Input IMemento.internal.id="SmInput" Name="entry_match" Permissions="0" Source="entry_mat" Type="9"/>
+<Input IMemento.internal.id="SmInput" Name="flash1" Permissions="0" Source="2000000" Type="6"/>
+<Input IMemento.internal.id="SmInput" Name="entry_mat" Permissions="0" Source="10" Type="6"/>
+<Input IMemento.internal.id="SmInput" Name="flash3" Permissions="0" Source="1600000" Type="6"/>
+<Input IMemento.internal.id="SmInput" Name="flash4" Permissions="0" Source="2000000" Type="6"/>
+<Output IMemento.internal.id="SmOutput" Name="turn_red" Permissions="6" Source="CTOUT_0" Type="0"/>
+<Output IMemento.internal.id="SmOutput" Name="turn_yellow" Permissions="6" Source="CTOUT_1" Type="0"/>
+<Output IMemento.internal.id="SmOutput" Name="turn_green" Permissions="6" Source="CTOUT_2" Type="0"/>
+<Output IMemento.internal.id="SmOutput" Name="Output pin 3" Permissions="6" Source="CTOUT_3" Type="0"/>
+<Output IMemento.internal.id="SmOutput" Name="Output pin 4" Permissions="6" Source="CTOUT_4" Type="0"/>
+<Output IMemento.internal.id="SmOutput" Name="out_track" Permissions="6" Source="CTOUT_5" Type="0"/>
+<Output IMemento.internal.id="SmOutput" Name="Limit unified counter" Permissions="6" Source="U_LIMIT" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="Start unified counter" Permissions="6" Source="U_START" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="Stop unified counter" Permissions="6" Source="U_STOP" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="Halt unified counter" Permissions="6" Source="U_HALT" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="Limit low counter" Permissions="6" Source="L_LIMIT" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="Start low counter" Permissions="6" Source="L_START" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="Stop low counter" Permissions="6" Source="L_STOP" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="Halt low counter" Permissions="6" Source="L_HALT" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="Limit high counter" Permissions="6" Source="H_LIMIT" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="Start high counter" Permissions="6" Source="H_START" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="Stop high counter" Permissions="6" Source="H_STOP" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="Halt high counter" Permissions="6" Source="H_HALT" Type="2"/>
+<Output IMemento.internal.id="SmOutput" Name="IRQname" Permissions="6" Source="IRQ" Type="2"/>
+<State h="35" name="U_ENTRY" w="65" x="99" y="220"/>
+<State h="35" name="RED" w="65" x="318" y="48"/>
+<State h="35" name="YELLOW" w="65" x="591" y="270"/>
+<State h="35" name="GREEN" w="65" x="360" y="527"/>
+<State h="46" name="YELLOW_FLASH" w="99" x="321" y="290"/>
+<Action description="" name="EVENT0" numElements="4">
+<ActionElement name="turn_yellow" op="1" order="1"/>
+<ActionElement name="turn_green" op="1" order="2"/>
+<ActionElement name="turn_red" op="0" order="3"/>
+<ActionElement name="Limit unified counter" op="2" order="4"/>
+</Action>
+<Action description="" name="red_action" numElements="4">
+<ActionElement name="turn_yellow" op="0" order="1"/>
+<ActionElement name="turn_red" op="1" order="2"/>
+<ActionElement name="Limit unified counter" op="2" order="3"/>
+<ActionElement name="out_track" op="1" order="4"/>
+</Action>
+<Action description="" name="gre_action" numElements="4">
+<ActionElement name="turn_green" op="1" order="1"/>
+<ActionElement name="turn_yellow" op="0" order="2"/>
+<ActionElement name="Limit unified counter" op="2" order="3"/>
+<ActionElement name="out_track" op="0" order="4"/>
+</Action>
+<Action description="" name="flash2gre_action" numElements="3">
+<ActionElement name="turn_yellow" op="1" order="1"/>
+<ActionElement name="turn_green" op="0" order="2"/>
+<ActionElement name="Limit unified counter" op="2" order="3"/>
+</Action>
+<Action description="" name="flash2red_action" numElements="3">
+<ActionElement name="turn_yellow" op="1" order="1"/>
+<ActionElement name="turn_red" op="0" order="2"/>
+<ActionElement name="Limit unified counter" op="2" order="3"/>
+</Action>
+<Action description="" name="yel2flash" numElements="2">
+<ActionElement name="Limit unified counter" op="2" order="1"/>
+<ActionElement name="turn_yellow" op="1" order="2"/>
+</Action>
+<Action description="" name="flash" numElements="1">
+<ActionElement name="turn_yellow" op="5" order="1"/>
+</Action>
+<SmLogical IMemento.internal.id="SmSignal" SML_DESC="" SML_NAME="intervalUp">
+<SmLogical IMemento.internal.id="SmLogicalBool" IOTYPE="0" SML_NAME="match0" SML_TYPE="1"/>
+</SmLogical>
+<SmLogical IMemento.internal.id="SmSignal" SML_DESC="" SML_NAME="flash2green">
+<SmLogical IMemento.internal.id="SmLogicalBinOp" SML_TYPE="1">
+<SML_ARG1 IMemento.internal.id="SmLogicalBool" IOTYPE="0" SML_NAME="yel_flash_mat" SML_TYPE="1"/>
+<SML_ARG2 IMemento.internal.id="SmLogicalBool" IOTYPE="1" SML_NAME="out_track" SML_TYPE="1"/>
+</SmLogical>
+</SmLogical>
+<SmLogical IMemento.internal.id="SmSignal" SML_DESC="" SML_NAME="flash2red">
+<SmLogical IMemento.internal.id="SmLogicalBinOp" SML_TYPE="1">
+<SML_ARG1 IMemento.internal.id="SmLogicalBool" IOTYPE="0" SML_NAME="yel_flash_mat" SML_TYPE="1"/>
+<SML_ARG2 IMemento.internal.id="SmLogicalBool" IOTYPE="1" SML_NAME="out_track" SML_TYPE="0"/>
+</SmLogical>
+</SmLogical>
+<SmLogical IMemento.internal.id="SmSignal" SML_DESC="" SML_NAME="yel2flash">
+<SmLogical IMemento.internal.id="SmLogicalBool" IOTYPE="0" SML_NAME="yel_delay_mat" SML_TYPE="1"/>
+</SmLogical>
+<SmLogical IMemento.internal.id="SmSignal" SML_DESC="" SML_NAME="flash0">
+<SmLogical IMemento.internal.id="SmLogicalBool" IOTYPE="0" SML_NAME="flash_mat0" SML_TYPE="1"/>
+</SmLogical>
+<SmLogical IMemento.internal.id="SmSignal" SML_DESC="" SML_NAME="flash1">
+<SmLogical IMemento.internal.id="SmLogicalBool" IOTYPE="0" SML_NAME="flash_mat1" SML_TYPE="1"/>
+</SmLogical>
+<SmLogical IMemento.internal.id="SmSignal" SML_DESC="" SML_NAME="entry">
+<SmLogical IMemento.internal.id="SmLogicalBool" IOTYPE="0" SML_NAME="entry_match" SML_TYPE="1"/>
+</SmLogical>
+<Transition action="EVENT0" current="U_ENTRY" h="60" next="RED" priority="0" signal="entry" w="150" x="122" y="95">
+<curve num="1">
+<point d1x="135" d1y="-74" d2x="-84" d2y="98" index="0" weight="0.5"/>
+</curve>
+</Transition>
+<Transition action="red_action" current="RED" h="75" next="YELLOW" priority="0" signal="intervalUp" w="150" x="610" y="81">
+<curve num="1">
+<point d1x="182" d1y="7" d2x="-33" d2y="-134" index="0" weight="0.5"/>
+</curve>
+</Transition>
+<Transition action="yel2flash" current="YELLOW" h="60" next="YELLOW_FLASH" priority="0" signal="yel2flash" w="150" x="459" y="318">
+<curve num="1">
+<point d1x="-101" d1y="25" d2x="152" d2y="-1" index="0" weight="0.5"/>
+</curve>
+</Transition>
+<Transition action="gre_action" current="GREEN" h="90" next="YELLOW" priority="0" signal="intervalUp" w="150" x="642" y="421">
+<curve num="1">
+<point d1x="212" d1y="-54" d2x="-19" d2y="203" index="0" weight="0.5"/>
+</curve>
+</Transition>
+<Transition action="flash2red_action" current="YELLOW_FLASH" h="30" next="RED" priority="10" signal="flash2red" w="165" x="402" y="164">
+<curve num="1">
+<point d1x="15" d1y="-142" d2x="35" d2y="106" index="0" weight="0.5"/>
+</curve>
+</Transition>
+<Transition action="flash2gre_action" current="YELLOW_FLASH" h="75" next="GREEN" priority="10" signal="flash2green" w="161" x="227" y="432">
+<curve num="1">
+<point d1x="36" d1y="98" d2x="14" d2y="-133" index="0" weight="0.5"/>
+</curve>
+</Transition>
+<Transition action="flash" current="YELLOW_FLASH" h="30" next="YELLOW_FLASH" priority="1" signal="flash0" w="58" x="440" y="330">
+<curve num="2">
+<point d1x="-99" d1y="-26" d2x="-99" d2y="-26" index="0" weight="0.5"/>
+<point d1x="-79" d1y="17" d2x="-79" d2y="17" index="1" weight="0.5"/>
+</curve>
+</Transition>
+<Transition action="flash" current="YELLOW_FLASH" h="45" next="YELLOW_FLASH" priority="1" signal="flash1" w="117" x="144" y="301">
+<curve num="1">
+<point d1x="70" d1y="17" d2x="70" d2y="17" index="0" weight="0.5"/>
+</curve>
+</Transition>
+<SmSpecification IMemento.internal.id="SmSCTv1" isUnified="true"/>
+</StateMachine>

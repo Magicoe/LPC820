@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ProjectWorkspace xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="project_mpw.xsd">
+
+  <SchemaVersion>1.0</SchemaVersion>
+
+  <Header>### uVision Project, (C) Keil Software</Header>
+
+  <WorkspaceName>WorkSpace</WorkspaceName>
+
+  <project>
+    <PathAndName>.\adc\adc_example\project_adc_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\acmp\acmp_example\project_acmp_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\bod\bod_example\project_bod_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\crc\crc_example\project_crc_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\dma\dma_mem\project_dma_mem.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\dma\dma_uart\project_dma_uart.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\flash\flash_iap\project_flash_iap.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\gpio\gpio_example\project_gpio_example.uvprojx</PathAndName>
+    <NodeIsExpanded>1</NodeIsExpanded>
+  </project>
+
+  <project>
+    <PathAndName>.\i2c\i2cm_interrupt\project_i2cm_interrupt.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\i2c\i2cm_polling\project_i2cm_polling.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\i2c\i2cs_interrupt\project_i2cs_interrupt.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\mrt\mrt_example\project_mrt_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\pinint\pinint_example\project_pinint_example.uvprojx</PathAndName>
+    <NodeIsActive>1</NodeIsActive>
+    <NodeIsExpanded>1</NodeIsExpanded>
+  </project>
+
+  <project>
+    <PathAndName>.\pmu\pmu_example\project_pmu_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\pmu\PMU_Hands_on\project_pmu_hands_on.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\rom\rom_i2c_interrupt\project_rom_i2c_interrupt.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\rom\rom_i2c_polling\project_rom_i2c_polling.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\rom\rom_i2c_slave_interrupt\project_rom_i2c_slave_interrupt.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\rom\rom_uart_int\project_rom_uart_int.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\rom\rom_uart_polling\project_rom_uart_polling.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\sctimer\sct_basic\project_sct_basic.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\sctimer\sct_pwm\project_sct_pwm.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\sctimer\sct_blinky\project_sct_blinky.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\sctimer\sct_capture\project_sct_capture.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\sctimer\sct_tlight\project_sct_tlight.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\spi\spi_basic\project_spi_basic.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\spi\spi_sm_int\project_spi_sm_int.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\sys\sys_clkout\project_sys_clkout.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\sys\sys_glitch_filter\project_sys_glitch_filter.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\sys\sys_pll_tab\project_sys_pll_tab.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\sys\sys_systick\project_sys_systick.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\uart\uart_basic\project_uart_basic.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\uart\uart_rb\project_uart_rb.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\wkt\wkt_example\project_wkt_example.uvprojx</PathAndName>
+  </project>
+
+  <project>
+    <PathAndName>.\wwdt\wwdt_example\project_wwdt_example.uvprojx</PathAndName>
+  </project>
+
+</ProjectWorkspace>
